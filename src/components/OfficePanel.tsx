@@ -12,8 +12,13 @@ export function OfficePanel() {
         <h3 className="text-lg font-semibold text-ink">{content.officePanel.title}</h3>
         <div className="mt-4 space-y-2 text-sm text-slate">
           <a className="block hover:text-ink" href={content.clinic.mapsLink} target="_blank" rel="noreferrer">{content.clinic.address}</a>
-          <p>{content.clinic.phone}</p>
+          <div>
+            {content.clinic.phones.map((phone) => (
+              <p key={phone}>{phone}</p>
+            ))}
+          </div>
           <p>{content.clinic.parkingNote}</p>
+          <p className="font-medium text-ink">{content.clinic.planNote}</p>
         </div>
         <div className="mt-4 space-y-2 text-xs text-slate/70">
           {content.clinic.hours.map((item) => (

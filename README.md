@@ -1,8 +1,24 @@
-# Aurora Medical Office Website (Bilingual)
+# MDCSP Nestor Frontera Tacoronte Website
 
-Production-ready, bilingual medical office site for Puerto Rico built with Next.js App Router, TypeScript, and Tailwind CSS. Spanish is the default language with a full UI switch to English.
+Bilingual website for MDCSP Nestor Frontera Tacoronte, the medical office of Dr. Nestor R. Frontera Tacoronte in Guánica, Puerto Rico. Spanish is the default language, with an English toggle available across the site.
 
-## Setup
+## Office Information
+
+- Address: 32-42 C. 25 de Julio, Guánica, PR 00653
+- Phone: (787) 821-4417
+- Phone: (787) 821-5828
+- Phone: (787) 821-4829
+- Hours: Monday to Friday, 7:00 a.m. - 4:00 p.m.
+- Medical plans: We take most medical plans. Call for more information.
+
+## Tech Stack
+
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- Bilingual content using `?lang=es` and `?lang=en`
+
+## Run Locally
 
 ```bash
 npm install
@@ -11,47 +27,31 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Content Editing (Single Source of Truth)
+## Build
 
-All text and structured content live in:
+```bash
+npm run build
+```
+
+## Content Editing
+
+The main content source is:
 
 - `src/content/siteContent.ts`
 
-Update clinic name, doctor info, services, hours, testimonials, FAQ, and SEO content there. The UI reads from this file across every page.
+Update doctor biography, services, office hours, phone numbers, medical plans note, FAQ, SEO titles, and Spanish/English copy there.
 
-## Key Architecture Notes
+## Important Files
 
-- **App Router + Server Metadata**: Each page uses `generateMetadata()` with the selected language so SEO metadata stays aligned.
-- **Language Provider**: Client-side language toggle with `?lang=` persistence and localStorage fallback. Example: `/services?lang=en`.
-- **Reusable Components**: All visual blocks live in `src/components`.
-- **Performance**: Minimal dependencies, `next/image` for assets, subtle CSS-only motion, and reduced-motion support.
-
-## Structure
-
-```
-src/
-  app/
-    about/page.tsx
-    contact/page.tsx
-    services/page.tsx
-    page.tsx
-    layout.tsx
-  components/
-  content/
-  lib/
-public/
-  assets/
-```
-
-## Replace Placeholder Assets
-
-Swap placeholders in `public/assets` with real photography:
-
-- `public/assets/clinic-hero.svg`
-- `public/assets/doctor-headshot.svg`
+- `src/app/page.tsx` - home page
+- `src/app/about/page.tsx` - doctor biography and résumé timeline
+- `src/app/services/page.tsx` - medical services
+- `src/app/contact/page.tsx` - contact and location details
+- `src/components` - reusable UI components
+- `public/assets/dr-nestor-frontera.jpg` - doctor portrait used across the site
 
 ## Notes
 
-- No appointments, WhatsApp, or patient portal features are included by design.
-- The contact form is client-side only and does not submit to a backend.
-- Update the metadata base URL in `src/app/layout.tsx`.
+- The contact form is client-side only and does not submit to a backend yet.
+- For medical emergencies, users should call 911 or visit the nearest emergency room.
+- Keep Spanish as the primary language unless the office requests otherwise.

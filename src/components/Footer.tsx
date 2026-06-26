@@ -20,7 +20,12 @@ export function Footer() {
         <div className="text-sm text-slate">
           <p className="font-semibold text-ink">{content.footer.contactLabel}</p>
           <a className="mt-2 block hover:text-ink" href={content.clinic.mapsLink} target="_blank" rel="noreferrer">{content.clinic.address}</a>
-          <p className="mt-2">{content.clinic.phone}</p>
+          <div className="mt-2 space-y-1">
+            {content.clinic.phones.map((phone) => (
+              <p key={phone}>{phone}</p>
+            ))}
+          </div>
+          <p className="mt-2 text-xs text-slate/70">{content.clinic.planNote}</p>
           {content.clinic.email ? <p className="mt-2">{content.clinic.email}</p> : null}
         </div>
         <div className="text-sm text-slate">

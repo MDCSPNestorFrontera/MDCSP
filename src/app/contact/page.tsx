@@ -54,8 +54,13 @@ export default function ContactPage({
               <div className="rounded-2xl border border-slate/10 bg-white p-6 shadow-card">
                 <h2 className="text-lg font-semibold text-ink">{content.contact.title}</h2>
                 <div className="mt-4 space-y-2 text-sm text-slate">
-                  <p>{content.clinic.phone}</p>
+                  <div>
+                    {content.clinic.phones.map((phone) => (
+                      <p key={phone}>{phone}</p>
+                    ))}
+                  </div>
                   <a className="block hover:text-ink" href={content.clinic.mapsLink} target="_blank" rel="noreferrer">{content.clinic.address}</a>
+                  <p className="font-medium text-ink">{content.clinic.planNote}</p>
                   {content.clinic.email ? <p>{content.clinic.email}</p> : null}
                 </div>
                 <div className="mt-4 space-y-2 text-xs text-slate/70">
