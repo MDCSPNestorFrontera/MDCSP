@@ -21,7 +21,7 @@ export async function generateMetadata({
       locale: lang === 'es' ? 'es_PR' : 'en_US',
       images: [
         {
-          url: '/assets/doctor-headshot.svg',
+          url: '/assets/dr-nestor-frontera.jpg',
           width: 1200,
           height: 630,
           alt: content.about.headshotAlt,
@@ -45,13 +45,13 @@ export default function AboutPage({
       <section className="bg-mist py-16">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="relative">
-            <div className="glass rounded-3xl p-4 shadow-soft">
+            <div className="glass rounded-2xl p-3 shadow-soft">
               <Image
-                src="/assets/doctor-headshot.svg"
+                src="/assets/dr-nestor-frontera.jpg"
                 alt={content.about.headshotAlt}
                 width={520}
                 height={640}
-                className="h-full w-full rounded-2xl object-cover"
+                className="aspect-[4/5] h-full w-full rounded-xl object-cover object-top"
                 priority
               />
             </div>
@@ -110,7 +110,7 @@ export default function AboutPage({
             <Reveal>
               <div className="rounded-2xl border border-slate/10 bg-mist p-6">
                 <h3 className="text-lg font-semibold text-ink">{content.about.sections.timeline}</h3>
-                <div className="mt-4 grid gap-4 md:grid-cols-3">
+                <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                   {content.about.timeline.map((item) => (
                     <div key={item.year} className="rounded-xl bg-white p-4 shadow-card">
                       <p className="text-sm font-semibold text-ink">{item.year}</p>

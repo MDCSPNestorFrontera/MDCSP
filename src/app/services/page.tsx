@@ -21,7 +21,7 @@ export async function generateMetadata({
       locale: lang === 'es' ? 'es_PR' : 'en_US',
       images: [
         {
-          url: '/assets/clinic-hero.svg',
+          url: '/assets/dr-nestor-frontera.jpg',
           width: 1200,
           height: 630,
           alt: content.hero.imageAlt,

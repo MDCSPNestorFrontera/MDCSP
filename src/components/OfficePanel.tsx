@@ -11,7 +11,7 @@ export function OfficePanel() {
       <div className="glass rounded-2xl p-6 shadow-card">
         <h3 className="text-lg font-semibold text-ink">{content.officePanel.title}</h3>
         <div className="mt-4 space-y-2 text-sm text-slate">
-          <p>{content.clinic.address}</p>
+          <a className="block hover:text-ink" href={content.clinic.mapsLink} target="_blank" rel="noreferrer">{content.clinic.address}</a>
           <p>{content.clinic.phone}</p>
           <p>{content.clinic.parkingNote}</p>
         </div>

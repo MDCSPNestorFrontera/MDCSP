@@ -27,7 +27,7 @@ export async function generateMetadata({
       locale: lang === 'es' ? 'es_PR' : 'en_US',
       images: [
         {
-          url: '/assets/clinic-hero.svg',
+          url: '/assets/dr-nestor-frontera.jpg',
           width: 1200,
           height: 630,
           alt: content.hero.imageAlt,
@@ -67,7 +67,7 @@ export default function HomePage({
                 {content.hero.primaryCta}
               </a>
               <Link
-                href={`/services?lang=${lang}`}
+                href={`/about?lang=${lang}`}
                 className="inline-flex items-center justify-center rounded-full border border-ink/10 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:border-ink/30"
               >
                 {content.hero.secondaryCta}
@@ -75,16 +75,16 @@ export default function HomePage({
             </div>
           </Reveal>
           <Reveal className="relative">
-            <div className="glass relative overflow-hidden rounded-3xl p-4 shadow-soft">
+            <div className="glass relative overflow-hidden rounded-2xl p-3 shadow-soft">
               <Image
-                src="/assets/clinic-hero.svg"
+                src="/assets/dr-nestor-frontera.jpg"
                 alt={content.hero.imageAlt}
                 width={520}
                 height={520}
-                className="h-full w-full rounded-2xl object-cover"
+                className="aspect-[4/5] h-full w-full rounded-xl object-cover object-top"
                 priority
               />
-              <div className="absolute left-6 top-6 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-ink">
+              <div className="absolute bottom-6 left-6 right-6 rounded-xl bg-white/92 px-4 py-3 text-xs font-semibold text-ink shadow-card">
                 {content.clinic.name}
               </div>
             </div>

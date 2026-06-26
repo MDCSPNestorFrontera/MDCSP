@@ -22,7 +22,7 @@ export async function generateMetadata({
       locale: lang === 'es' ? 'es_PR' : 'en_US',
       images: [
         {
-          url: '/assets/clinic-hero.svg',
+          url: '/assets/dr-nestor-frontera.jpg',
           width: 1200,
           height: 630,
           alt: content.hero.imageAlt,
@@ -55,8 +55,8 @@ export default function ContactPage({
                 <h2 className="text-lg font-semibold text-ink">{content.contact.title}</h2>
                 <div className="mt-4 space-y-2 text-sm text-slate">
                   <p>{content.clinic.phone}</p>
-                  <p>{content.clinic.address}</p>
-                  <p>{content.clinic.email}</p>
+                  <a className="block hover:text-ink" href={content.clinic.mapsLink} target="_blank" rel="noreferrer">{content.clinic.address}</a>
+                  {content.clinic.email ? <p>{content.clinic.email}</p> : null}
                 </div>
                 <div className="mt-4 space-y-2 text-xs text-slate/70">
                   {content.clinic.hours.map((item) => (

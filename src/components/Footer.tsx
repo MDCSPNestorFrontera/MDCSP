@@ -19,9 +19,9 @@ export function Footer() {
         </div>
         <div className="text-sm text-slate">
           <p className="font-semibold text-ink">{content.footer.contactLabel}</p>
-          <p className="mt-2">{content.clinic.address}</p>
+          <a className="mt-2 block hover:text-ink" href={content.clinic.mapsLink} target="_blank" rel="noreferrer">{content.clinic.address}</a>
           <p className="mt-2">{content.clinic.phone}</p>
-          <p className="mt-2">{content.clinic.email}</p>
+          {content.clinic.email ? <p className="mt-2">{content.clinic.email}</p> : null}
         </div>
         <div className="text-sm text-slate">
           <p className="font-semibold text-ink">{content.footer.hoursLabel}</p>
