@@ -3,6 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Manrope } from 'next/font/google';
 import { siteContent } from '@/content/siteContent';
+import { assetPath } from '@/lib/paths';
 
 const displayFont = Cormorant_Garamond({
   subsets: ['latin'],
@@ -21,7 +22,7 @@ const bodyFont = Manrope({
 const defaultSeo = siteContent.es.seo;
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://clinicaaurora.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: defaultSeo.pages.home.title,
   description: defaultSeo.pages.home.description,
   openGraph: {
@@ -32,12 +33,12 @@ export const metadata: Metadata = {
   },
   alternates: {
     languages: {
-      'es-PR': '/?lang=es',
-      'en-US': '/?lang=en',
+      'es-PR': `${assetPath('/')}?lang=es`,
+      'en-US': `${assetPath('/')}?lang=en`,
     },
   },
   icons: {
-    icon: '/icon.svg',
+    icon: assetPath('/icon.svg'),
   },
 };
 

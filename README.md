@@ -33,6 +33,18 @@ Open `http://localhost:3000`.
 npm run build
 ```
 
+
+## GitHub Pages Deployment
+
+This repository is configured to deploy the Next.js static export to GitHub Pages using GitHub Actions.
+
+- Workflow: `.github/workflows/deploy.yml`
+- Static output folder: `out/`
+- Production base path: `/MDCSP`
+- Expected Pages URL: `https://mdcspnestorfrontera.github.io/MDCSP/`
+
+In GitHub, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. After pushing to `main`, the workflow builds the site and publishes the generated `out/index.html` instead of rendering the README.
+
 ## Content Editing
 
 The main content source is:
