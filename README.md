@@ -36,14 +36,16 @@ npm run build
 
 ## GitHub Pages Deployment
 
-This repository is configured to deploy the Next.js static export to GitHub Pages using GitHub Actions.
+This repository deploys the Next.js static export to GitHub Pages using GitHub Actions.
 
 - Workflow: `.github/workflows/deploy.yml`
 - Static output folder: `out/`
-- Production base path: `/MDCSP`
-- Expected Pages URL: `https://mdcspnestorfrontera.github.io/MDCSP/`
+- Custom domain: `mdnestorfrontera.com`
+- Production site URL: `https://mdnestorfrontera.com/`
 
-In GitHub, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. After pushing to `main`, the workflow builds the site and publishes the generated `out/index.html` instead of rendering the README.
+The `public/CNAME` file keeps the custom domain attached to GitHub Pages. In GitHub, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. The workflow publishes the generated `out/index.html`, so Pages serves the website instead of rendering the README.
+
+For a custom domain, the site is served from `/`, so CSS and JavaScript assets must not use the `/MDCSP` base path.
 
 ## Content Editing
 

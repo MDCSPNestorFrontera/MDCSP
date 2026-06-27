@@ -1,4 +1,5 @@
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mdnestorfrontera.com';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -8,13 +9,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: isGithubActions ? '/MDCSP' : '',
-  assetPrefix: isGithubActions ? '/MDCSP/' : '',
+  basePath,
+  assetPrefix: basePath ? `${basePath}/` : '',
   env: {
-    NEXT_PUBLIC_BASE_PATH: isGithubActions ? '/MDCSP' : '',
-    NEXT_PUBLIC_SITE_URL: isGithubActions
-      ? 'https://mdcspnestorfrontera.github.io/MDCSP'
-      : 'http://localhost:3000',
+    NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_SITE_URL: siteUrl,
   },
 };
 
